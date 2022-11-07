@@ -55,7 +55,6 @@ body {
 
 .link {
   text-decoration: none;
-  outline: none;
 }
 
 .visually-hidden {
@@ -82,7 +81,6 @@ body {
   display: inline-block;
   border: none;
   text-align: center;
-  outline: none;
 }
 
 .list {
@@ -813,7 +811,6 @@ body {
 .modal-phone-input,
 .modal-email-input,
 .modal-comment-textarea {
-  outline: none;
   display: block;
   margin-top: 4px;
   padding-left: 41px;
@@ -882,6 +879,18 @@ body {
   margin-right: 8px;
   width: 16px;
   height: 15px;
+}
+
+.modal-accept-icon {
+  border: 2px solid var(--secondary-color);
+  border-radius: 4px;
+  margin-right: 8px;
+  transition: background-color var(--animation), border-color var(--animation);
+}
+
+.modal-accept-input:checked + .modal-accept-icon {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .modal-accept-formatting {
