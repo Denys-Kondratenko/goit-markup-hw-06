@@ -813,21 +813,55 @@ body {
 .modal-phone-input,
 .modal-email-input,
 .modal-comment-textarea {
+  outline: none;
   display: block;
   margin-top: 4px;
+  padding-left: 41px;
+  padding-right: 16px;
   width: inherit;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  transition: border var(--animation);
+}
+
+.modal-name-input:focus + .modal-icon-name,
+.modal-phone-input:focus + .modal-icon-phone,
+.modal-email-input:focus + .modal-icon-email {
+  color: var(--accent-color);
+}
+
+.modal-name-input:focus,
+.modal-phone-input:focus,
+.modal-email-input:focus,
+.modal-comment-textarea:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.input-wrap {
+  width: 100%;
+  position: relative;
+}
+
+.modal-icon-name,
+.modal-icon-phone,
+.modal-icon-email {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  color: var(--secondary-color);
+  fill: currentColor;
+  transition: color var(--animation);
 }
 
 .modal-comment-textarea {
+  padding: 12px 16px;
   height: 138px;
   resize: none;
 }
 
 .modal-comment-textarea::placeholder {
-  display: inline;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -870,7 +904,7 @@ body {
   margin: 0 auto;
   min-width: 200px;
   height: 50px;
-  background: #2196f3;
+  background-color: var(--accent-background-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
@@ -880,4 +914,10 @@ body {
   letter-spacing: 0.06em;
   color: var(--wite-color);
   cursor: pointer;
+  transition: background-color var(--animation);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: var(--hover-background-color);
 }
